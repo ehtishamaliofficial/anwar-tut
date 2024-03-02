@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
+    <link rel="stylesheet" href="/css/form.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Registration</h2>
+      <% if(locals.error) {%>
+      <p
+        style="
+          text-align: center;
+          padding: 10px;
+          background-color: rgba(255, 0, 0, 0.3);
+          color: red;
+        "
+      >
+        <%= locals.error %>
+      </p>
+      <% } %>
+      <form action="/api/register" method="post">
+        <div class="input-box">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <input
+            id="email"
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <p id="errorEmail"></p>
+        </div>
+        <div class="input-box">
+          <input
+            type="password"
+            name="password"
+            placeholder="Create password"
+            required
+            id="password"
+          />
+        </div>
+        <div class="input-box">
+          <input
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirm password"
+            required
+          />
+          <p id="errorPassword"></p>
+        </div>
+        <div class="policy">
+          <input type="checkbox" />
+          <h3>I accept all terms & condition</h3>
+        </div>
+        <div class="input-box button">
+          <input type="Submit" id="btn" value="Register Now" />
+        </div>
+        <div class="text">
+          <h3>Already have an account? <a href="/login">Login now</a></h3>
+        </div>
+      </form>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
